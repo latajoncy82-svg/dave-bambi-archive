@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b12">
+  <meta name="description" content="A source-linked encyclopedia of Dave & Bambi characters, forms, and fan mods.">
+  <title>Dave &amp; Bambi Character Archive</title>
+  <link rel="icon" href="mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="characters.js"></script>
+  <script defer src="archive.js"></script>
+</head>
+<body>
+  <a class="skip" href="#collection">Skip to character index</a>
+  <header class="top">
+    <div class="shell top-inner">
+      <a class="brand" href="#" aria-label="Dave and Bambi Archive home">
+        <img src="mark.svg" width="39" height="39" alt="">
+        <span><strong>D&amp;B ARCHIVE</strong><small>THE CHARACTER ENCYCLOPEDIA</small></span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a class="nav-active" href="#collection">Characters</a>
+        <button type="button" data-about>Sources &amp; notes</button>
+      </nav>
+      <span class="signal"><i></i> INDEX ONLINE</span>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> THE DAVE &amp; BAMBI UNIVERSE</p>
+        <h1 id="hero-title">Character<br><em>Archive<span>.</span></em></h1>
+        <p class="hero-text">Explore the original cast, documented forms, and fan creations from the Dave &amp; Bambi mod scene.</p>
+        <div class="hero-actions">
+          <a class="primary" href="#collection">Browse characters <span aria-hidden="true">↓</span></a>
+          <button type="button" class="secondary" data-about>How we source</button>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="coordinate">FIG. 01&nbsp; // &nbsp;ORIGINAL CAST</span>
+        <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="orbit orbit-three"></span>
+        <span class="pixel p1"></span><span class="pixel p2"></span><span class="pixel p3"></span><span class="pixel p4"></span>
+        <div id="hero-portraits" class="hero-portraits"></div>
+        <span class="coordinate bottom">D&amp;B / REFERENCE INDEX</span>
+      </div>
+    </section>
+    <div class="stats" aria-label="Archive totals">
+      <div><span class="stat-icon">▦</span><span><strong id="stat-entries">—</strong><small>CHARACTER ENTRIES</small></span></div>
+      <div><span class="stat-icon">◇</span><span><strong id="stat-mods">—</strong><small>DOCUMENTED MODS</small></span></div>
+      <div><span class="stat-icon">◎</span><span><strong id="stat-images">—</strong><small>SOURCED PORTRAITS</small></span></div>
+      <div class="stat-note"><span class="status-dot"></span> Community reference <span class="divider">/</span> Source-linked entries</div>
+    </div>
+
+    <section class="directory" id="collection" aria-labelledby="index-title">
+      <aside class="sidebar" aria-label="Browse by mod">
+        <div class="sidebar-head"><span>▥</span> MOD DIRECTORY</div>
+        <div class="mod-list" id="mod-list"></div>
+        <button type="button" class="sidebar-note" data-about><strong>About this archive ↗</strong><small>Sources, credits &amp; ranking</small></button>
+      </aside>
+      <div class="index">
+        <div class="index-head">
+          <div><p class="eyebrow subtle">/ / &nbsp; DATABASE INDEX</p><h2 id="index-title">All Characters</h2></div>
+          <span id="results-count" class="counter" role="status"></span>
+        </div>
+        <form id="filters" class="filters" role="search">
+          <div class="search">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+            <label for="search" class="sr-only">Search characters</label>
+            <input id="search" placeholder="Search names, aliases, or mods…" autocomplete="off">
+            <button type="button" id="clear-search" aria-label="Clear search" hidden>×</button>
+            <kbd aria-hidden="true">/</kbd>
+          </div>
+          <div class="selects">
+            <label class="mobile-mod">Mod<select id="mod-select" aria-label="Mod filter"></select></label>
+            <label>Character type<select id="type-select"></select></label>
+            <label>Sort by<select id="sort-select">
+              <option value="popular">Most Popular</option><option value="least">Least Popular</option>
+              <option value="az">Name A–Z</option><option value="za">Name Z–A</option>
+              <option value="mod">Mod</option><option value="recent">Recently Added</option>
+            </select></label>
+          </div>
+        </form>
+        <p class="sort-note" id="sort-note"></p>
+        <div id="grid" class="grid"></div>
+        <div id="empty" class="empty" hidden><strong>No matching characters</strong><p>Try a shorter search or broaden the mod and type filters.</p><button class="secondary" id="reset" type="button">Reset filters</button></div>
+        <div id="pages" class="pagination" aria-label="Result pages"></div>
+        <noscript>Enable JavaScript to browse the local character index.</noscript>
+      </div>
+    </section>
+  </main>
+  <footer class="shell foot"><span>D&amp;B ARCHIVE <b>/</b> UNOFFICIAL FAN ENCYCLOPEDIA</span><button data-about type="button">Sources &amp; credits ↗</button></footer>
+  <dialog id="profile" aria-labelledby="profile-title"><div id="profile-body"></div></dialog>
+  <dialog id="about" aria-labelledby="about-title">
+    <div class="about-content">
+      <form method="dialog"><button class="close" aria-label="Close notes">×</button></form>
+      <p class="eyebrow"><span></span> ARCHIVE NOTES</p><h2 id="about-title">Sources &amp; methodology</h2>
+      <h3>Roster evidence</h3><p>Each entry links to a character page or a named roster section. Mod badges use roster or character-page evidence. Profiles separate appearances, crossovers, and archived material. Popcorn Edition includes its documented cast. Standalone fan OCs can be browsed without assigning them to a mod.</p>
+      <h3>Estimated popularity</h3><p>Ranking combines an editorial spotlight for recognizable characters, documented mod coverage, and primary-roster prominence. Ties sort by name. It is an archive estimate and uses no traffic, download, or vote data. Recently Added follows archive ingestion order.</p>
+      <h3>Artwork &amp; credits</h3><p>Portraits are tied to the character sections that identify them. File credits link back to the original source. Artwork hosted by the source needs an internet connection. The database, profiles, and filters are bundled locally.</p>
+      <div class="source-links" id="general-sources"></div>
+    </div>
+  </dialog>
+</body>
+</html>
